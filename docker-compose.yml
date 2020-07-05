@@ -63,9 +63,6 @@ services:
         source: ./kibana/config/kibana.yml
         target: /usr/share/kibana/config/kibana.yml
         read_only: true
-    # The default of 1.4 GB is insufficient for optimizing
-    # Search Guard bundles
-    NODE_OPTIONS: --max-old-space-size=2048
     ports:
       - "5601:5601"
     networks:
