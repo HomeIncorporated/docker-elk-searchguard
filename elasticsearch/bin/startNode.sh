@@ -1,6 +1,6 @@
 #!/bin/sh
 # Start searchguard elasticsearch
-plugins/search-guard-6/tools/sgadmin.sh \
+plugins/search-guard-7/tools/sgadmin.sh \
 	-cd config/sg/ \
 	-nhnv \
 	-icl \
