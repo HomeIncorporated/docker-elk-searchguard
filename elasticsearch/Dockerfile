@@ -6,11 +6,11 @@ FROM docker.elastic.co/elasticsearch/elasticsearch-oss:${ELK_VERSION}
 COPY config/elasticsearch.yml config/elasticsearch.yml
 COPY config/sg/ config/sg/
 COPY bin/ bin/
-COPY search-guard-tlstool-1.5/ search-guard-tlstool-1.5/
+COPY search-guard-tlstool-1.8/ search-guard-tlstool-1.8/
 
-RUN chown -R elasticsearch search-guard-tlstool-1.5 && \
-    chmod +x search-guard-tlstool-1.5/tools/sgtlsdiag.sh && \
-    chmod +x search-guard-tlstool-1.5/tools/sgtlstool.sh
+RUN chown -R elasticsearch search-guard-tlstool-1.8 && \
+    chmod +x search-guard-tlstool-1.8/tools/sgtlsdiag.sh && \
+    chmod +x search-guard-tlstool-1.8/tools/sgtlstool.sh
 
 RUN yum update -y && \
     yum install -y wget && \
@@ -19,11 +19,11 @@ RUN yum update -y && \
 
 ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk/
 
-RUN search-guard-tlstool-1.5/tools/sgtlstool.sh -c search-guard-tlstool-1.5/config/elk.yml -ca -crt -t config/
+RUN search-guard-tlstool-1.8/tools/sgtlstool.sh -c search-guard-tlstool-1.8/config/elk.yml -ca -crt -t config/
 
 # check if certs are validated
-RUN search-guard-tlstool-1.5/tools/sgtlsdiag.sh -ca config/root-ca.pem -crt config/node1.pem && \
-    search-guard-tlstool-1.5/tools/sgtlsdiag.sh -ca config/root-ca.pem -crt config/admin.pem
+RUN search-guard-tlstool-1.8/tools/sgtlsdiag.sh -ca config/root-ca.pem -crt config/node1.pem && \
+    search-guard-tlstool-1.8/tools/sgtlsdiag.sh -ca config/root-ca.pem -crt config/admin.pem
 
 #RUN cat config/node1_elasticsearch_config_snippet.yml >> config/elasticsearch.yml
 
@@ -41,3 +41,4 @@ USER elasticsearch
 
 RUN mkdir ssl && \
     cp config/root-ca.pem ssl/
+
