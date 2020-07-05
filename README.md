@@ -11,9 +11,9 @@
 
 ## Versions:
 
-- ELK 6.4.2
-- search guard 6
-- search-guard-tlstool-1.5 https://github.com/floragunncom/search-guard-tlstool
+- ELK 7.8.0
+- search guard 7
+- search-guard-tlstool-1.8 https://github.com/floragunncom/search-guard-tlstool
 - java-1.8.0-openjdk
 - docker (v18.03)
 
@@ -32,7 +32,7 @@ Create a volume shared between elasticseach and kibana container:
 
 `docker volume create --name ssl`
 
-Update file: `elasticsearch/search-guard-tlstool-1.5/config/elk.yml`
+Update file: `elasticsearch/search-guard-tlstool-1.8/config/elk.yml`
 
 - add your own docker swarm node dns name
 - add your own docker swarm node ip
