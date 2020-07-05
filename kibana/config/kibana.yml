@@ -5,6 +5,7 @@
 server.name: kibana
 server.host: "0"
 elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+logging.events.log: ['warning', 'error', 'fatal', 'info', 'reporting']
 
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/kibana/current/security-settings-kb.html
