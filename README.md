@@ -111,3 +111,9 @@ Initiate searchguard:
 `bin/startNode.sh`
 
 you can now login with new kibana user and password
+
+# Create the network for specific subnet
+
+```sh
+> docker network create network_example --subnet 192.168.2.1/24
+```
