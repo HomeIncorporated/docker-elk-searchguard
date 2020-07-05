@@ -8,7 +8,7 @@
 ca:
    root:
       # The distinguished name of this CA. You must specify a distinguished name.   
-      dn: CN=root.ca.chrisquan.com,OU=SSL,O=devop,DC=chrisquan,DC=com
+      dn: CN=root.ca.elastic-cluster.com,OU=SSL,O=devop,DC=elastic-cluster,DC=com
 
       # The size of the generated key in bits
       keysize: 2048
@@ -105,9 +105,9 @@ defaults:
 #      
 nodes:
   - name: node1
-    dn: CN=node1.chrisquan.com,OU=SSL,O=devop,DC=chrisquan,DC=com
+    dn: CN=node1.elastic-cluster.com,OU=SSL,O=devop,DC=elastic-cluster,DC=com
     dns: devop-manager # docker node name
-    ip: xx.xxx.xxx.xxx # GCE server ip or docker node ip if diffferent
+    ip: 192.168.2.1 # GCE server ip or docker node ip if diffferent
 #  - name: node2
 #    dn: CN=node2.example.com,OU=Ops,O=Example Com\, Inc.,DC=example,DC=com
 #    dns: 
@@ -131,6 +131,6 @@ nodes:
 #        
 clients:
   - name: admin
-    dn: CN=admin.chrisquan.com,OU=SSL,O=devop,DC=chrisquan,DC=com
+    dn: CN=admin.elastic-cluster.com,OU=SSL,O=devop,DC=elastic-cluster,DC=com
     admin: true
  

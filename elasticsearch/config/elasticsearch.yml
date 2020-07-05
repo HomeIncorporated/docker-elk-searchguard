@@ -31,7 +31,7 @@ searchguard.ssl.http.enabled: false
 #searchguard.ssl.http.pemkey_password: admin
 #searchguard.ssl.http.pemtrustedcas_filepath: root-ca.pem
 searchguard.nodes_dn:
-- CN=node1.chrisquan.com,OU=SSL,O=devop,DC=chrisquan,DC=com
+- CN=node1.elastic-cluster.com,OU=SSL,O=devop,DC=elastic-cluster,DC=com
 searchguard.authcz.admin_dn:
-- CN=admin.chrisquan.com,OU=SSL,O=devop,DC=chrisquan,DC=com
+- CN=admin.elastic-cluster.com,OU=SSL,O=devop,DC=elastic-cluster,DC=com
 # 
