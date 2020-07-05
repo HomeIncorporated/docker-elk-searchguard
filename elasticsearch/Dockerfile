@@ -30,8 +30,8 @@ RUN search-guard-tlstool-1.5/tools/sgtlsdiag.sh -ca config/root-ca.pem -crt conf
 # Search Guard plugin
 ARG ELK_VERSION
 ARG SG_VERSION
-RUN elasticsearch-plugin install --batch com.floragunn:search-guard-6:${ELK_VERSION}-${SG_VERSION} \
-	&& chmod +x plugins/search-guard-6/tools/*.sh \
+RUN elasticsearch-plugin install --batch https://releases.floragunn.com/search-guard-7/${ELK_VERSION}-${SG_VERSION}/search-guard-7-${ELK_VERSION}-${SG_VERSION}.zip \
+	&& chmod +x plugins/search-guard-7/tools/*.sh \
 	&& chown -R elasticsearch config/sg/ \
 	&& chmod -R go= config/sg/ \
         && chown -R elasticsearch config/ \
