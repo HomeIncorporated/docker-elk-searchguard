@@ -10,8 +10,13 @@ logging.events.log: ['warning', 'error', 'fatal', 'info', 'reporting']
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/kibana/current/security-settings-kb.html
 #
-xpack.security.enabled: false
-xpack.monitoring.ui.container.elasticsearch.enabled: true
+# xpack.security.enabled: false
+# xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+#
+# Enable data collection from Kibana NodeJS server for kibana dashboards to be featured in Monitoring
+monitoring.kibana.collection.enabled: true
+monitoring.ui.container.elasticsearch.enabled: true;
 
 ## Custom configuration
 #
